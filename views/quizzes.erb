@@ -1,0 +1,15 @@
+<h3>Quizzes</h3>
+<% if @quizzes.any? %>
+  <ul>
+    <% @quizzes.each do |quiz| %>
+      <li>
+        <a href="/quiz/<%= quiz.id %>"><%= quiz.name %></a>
+        <br>Subject: <%= quiz.subject %>
+        <br>Number of Questions: <%= quiz.number_of_questions %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no songs listed for this album yet.</p>
+<%end%>
+ <a href="/quiz/add">Add a Quiz</a>

@@ -1,0 +1,23 @@
+<h2> <%= @quiz.name %> </h2>
+<br>
+Subject <%= @quiz.subject %>
+Number of Questions <%= @quiz.number_of_questions %>
+
+<a href="/quiz/<%= @quiz.id %>/questions/new"> Add a Question</a>
+
+<% binding.pry %>
+<% if @questions.any? %>
+  <ol>
+    <% @questions.each do |question|%>
+      <li>
+        <%= question.question %> <br>
+        <% question.possible_answers.each_with_index do |answer, idx| %>
+          <input type="radio" name="answer<%= question.id %>" value="<%= idx %>"> <%= answer %><br>
+        <% end %>
+      </li>
+      <br><br>
+    <% end %>
+  </ol>
+<% else%>
+  No questions yet!
+<% end %>

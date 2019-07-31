@@ -1,0 +1,15 @@
+<h2> Create Question </h2>
+
+<form action="/quiz/<%= @id %>/question/add" method="post">
+    <div class="form-group">
+      <label for="question">Question: </label><br>
+      <input id="question" name="question" class="form-control" type="text"><br>
+      <label for="answer">Possible Answer: </label><br>
+      <input id="answer" name="answer1" class="form-control" type="text">
+      <label for="answer">Possible Answer: </label><br>
+      <input id="answer" name="answer2" class="form-control" type="text">
+      <label for="answer">Possible Answer: </label><br>
+      <input id="answer" name="answer3" class="form-control" type="text">
+    </div>
+    <button type="submit" class="btn">Add Question</button>
+</form>
