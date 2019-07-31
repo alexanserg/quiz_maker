@@ -20,6 +20,11 @@ class Quiz
      quizzes
    end
 
+   def count_questions
+     counting_array = Question.find_by_quiz(@id).length
+
+   end
+
    def save
      result = DB.exec("INSERT INTO quizzes (name, subject, number_of_questions) VALUES ('#{@name}', '#{@subject}', #{@number_of_questions}) RETURNING id;")
      @id = result.first().fetch("id").to_i

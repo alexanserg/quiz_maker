@@ -1,11 +1,10 @@
 <h2> <%= @quiz.name %> </h2>
-<br>
-Subject <%= @quiz.subject %>
-Number of Questions <%= @quiz.number_of_questions %>
 
-<a href="/quiz/<%= @quiz.id %>/questions/new"> Add a Question</a>
+Subject <%= @quiz.subject %><br>
+Number of Questions <%= @quiz.count_questions%><br><br>
 
-<% binding.pry %>
+<a href="/quiz/<%= @quiz.id %>/questions/new"> Add a Question</a><br><br>
+
 <% if @questions.any? %>
   <ol>
     <% @questions.each do |question|%>
